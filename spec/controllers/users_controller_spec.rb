@@ -35,5 +35,32 @@ RSpec.describe UsersController, :type => :controller do
       expect(assigns(:user)).to be_a(User)
       expect(assigns(:user)).to eq(user)
     end
+
+  end
+
+  context "GET #new" do
+    it "successfully renders the new user page" do
+      get :new
+      expect(response).to have_http_status(200)
+      expect(response).to render_template(:new)
+    end
+
+    it "must have a new user" do
+      get :new
+      expect(assigns(:user)).to be_a(User)
+      expect(assigns(:user)).to be_a_new(User)
+    end
+
+  end
+
+  # context "POST #create" do
+  #   let!(:params) {
+  #     { name: 'Mary Sue', email: 'marysue@email.com'}
+  #   }
+  #   it "successfully creates a new user" do
+  #     post :create, params: { user: params }
+  #     expect(flash[:notice]).to eq("User successfully created!")
+  #   end
+
   end
 end
