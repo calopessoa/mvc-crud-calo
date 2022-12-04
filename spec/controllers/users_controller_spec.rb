@@ -20,4 +20,14 @@ RSpec.describe UsersController, :type => :controller do
     end
 
   end
+
+  context "GET #show" do
+    let(:user) { create(:user) }
+
+    it "should successfully render the edit page" do
+      get :show, params: { id: user.id }
+      expect(response).to have_http_status(200)
+      expect(response).to render_template(:show)
+    end
+  end
 end
