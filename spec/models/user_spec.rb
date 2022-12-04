@@ -11,6 +11,12 @@ RSpec.describe User, :type => :model do
       user = User.new(email: 'johndoe@email.com')
       expect(user).to_not be_valid
     end
+
+    it "is not blank, empty field" do
+      user = User.new(name: nil)
+      user.valid?
+      expect(user.errors[:name]).to include("can't be blank")
+    end
   end
 
   context "User-email validation" do
