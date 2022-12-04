@@ -29,5 +29,11 @@ RSpec.describe UsersController, :type => :controller do
       expect(response).to have_http_status(200)
       expect(response).to render_template(:show)
     end
+
+    it "where the correct ID is found" do
+      get :show, params: { id: user.id }
+      expect(assigns(:user)).to be_a(User)
+      expect(assigns(:user)).to eq(user)
+    end
   end
 end
