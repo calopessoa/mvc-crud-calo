@@ -104,25 +104,16 @@ RSpec.describe UsersController, :type => :controller do
 
   end
 
-  # context "DELETE #destroy" do
-  #   let!(:user) {
-  #     create(:user)
-  #   }
-  #   it "successfully updates a existing user" do
-  #     params = { name: "User was successfully updated."}
-  #     put :update, params: { id: user.id, user: params }
-  #     user.reload
-  #     expect(user.name).to eq(params[:name])
-  #     expect(flash[:notice]).to eq("User was successfully updated.")
-  #     expect(response).to have_http_status(302)
-  #   end
+  context "DELETE #destroy" do
+    let!(:user) {
+      create(:user)
+    }
+    it "successfully deletes a existing user" do
+      delete :destroy, params: { id: user.id }
+      expect(flash[:notice]).to eq("User was successfully destroyed.")
+      expect(response).to redirect_to(action: :index)
+      expect(response).to have_http_status(302)
+    end
 
-  #   it "fails to update a existing user" do
-  #     params = { name: nil }
-  #     put :update, params: { id: user.id, user: params }
-  #     expect(flash[:notice]).to render_template(:edit)
-  #     expect(response).to have_http_status(422)
-  #   end
-
-  # end
+  end
 end
