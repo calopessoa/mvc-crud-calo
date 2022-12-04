@@ -62,5 +62,12 @@ RSpec.describe UsersController, :type => :controller do
       expect(flash[:notice]).to eq("User was successfully created.")
     end
 
+    it "fails to create a new user" do
+      params = { name: 'Mary Sue' }
+      post :create, params: { user: params }
+      expect(flash[:notice]).to render_template(:new)
+      expect(response).to have_http_status(422)
+    end
+
   end
 end
