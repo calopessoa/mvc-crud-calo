@@ -14,6 +14,7 @@ RSpec.describe UsersController, :type => :controller do
     end
 
     it "should have at least one user" do
+      create(:user)
       get :index
       expect(assigns(:users)).to_not be_empty
     end
