@@ -53,14 +53,14 @@ RSpec.describe UsersController, :type => :controller do
 
   end
 
-  # context "POST #create" do
-  #   let!(:params) {
-  #     { name: 'Mary Sue', email: 'marysue@email.com'}
-  #   }
-  #   it "successfully creates a new user" do
-  #     post :create, params: { user: params }
-  #     expect(flash[:notice]).to eq("User successfully created!")
-  #   end
+  context "POST #create" do
+    let!(:params) {
+      { name: 'Mary Sue', email: 'marysue@email.com'}
+    }
+    it "successfully creates a new user" do
+      post :create, params: { user: params }
+      expect(flash[:notice]).to eq("User was successfully created.")
+    end
 
   end
 end
