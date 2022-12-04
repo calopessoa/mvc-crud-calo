@@ -24,7 +24,7 @@ RSpec.describe UsersController, :type => :controller do
   context "GET #show" do
     let(:user) { create(:user) }
 
-    it "should successfully render the edit page" do
+    it "should successfully render the show page" do
       get :show, params: { id: user.id }
       expect(response).to have_http_status(200)
       expect(response).to render_template(:show)
@@ -53,6 +53,16 @@ RSpec.describe UsersController, :type => :controller do
 
   end
 
+  context "GET #edit" do
+    let(:user) { create(:user) }
+    it "successfully renders edit page" do
+      get :edit, params: { id: user.id }
+      expect(response).to render_template(:edit)
+      expect(assigns(:user)).to be_a(User)
+    end
+
+  end
+
   context "POST #create" do
     let!(:params) {
       { name: 'Mary Sue', email: 'marysue@email.com'}
@@ -60,6 +70,7 @@ RSpec.describe UsersController, :type => :controller do
     it "successfully creates a new user" do
       post :create, params: { user: params }
       expect(flash[:notice]).to eq("User was successfully created.")
+      expect(response).to have_http_status(302)
     end
 
     it "fails to create a new user" do
@@ -70,4 +81,48 @@ RSpec.describe UsersController, :type => :controller do
     end
 
   end
+
+  context "PUT #update" do
+    let!(:user) {
+      create(:user)
+    }
+    it "successfully updates a existing user" do
+      params = { name: "User was successfully updated."}
+      put :update, params: { id: user.id, user: params }
+      user.reload
+      expect(user.name).to eq(params[:name])
+      expect(flash[:notice]).to eq("User was successfully updated.")
+      expect(response).to have_http_status(302)
+    end
+
+    it "fails to update a existing user" do
+      params = { name: nil }
+      put :update, params: { id: user.id, user: params }
+      expect(flash[:notice]).to render_template(:edit)
+      expect(response).to have_http_status(422)
+    end
+
+  end
+
+  # context "DELETE #destroy" do
+  #   let!(:user) {
+  #     create(:user)
+  #   }
+  #   it "successfully updates a existing user" do
+  #     params = { name: "User was successfully updated."}
+  #     put :update, params: { id: user.id, user: params }
+  #     user.reload
+  #     expect(user.name).to eq(params[:name])
+  #     expect(flash[:notice]).to eq("User was successfully updated.")
+  #     expect(response).to have_http_status(302)
+  #   end
+
+  #   it "fails to update a existing user" do
+  #     params = { name: nil }
+  #     put :update, params: { id: user.id, user: params }
+  #     expect(flash[:notice]).to render_template(:edit)
+  #     expect(response).to have_http_status(422)
+  #   end
+
+  # end
 end
