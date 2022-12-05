@@ -26,15 +26,15 @@ You may find unitary and integration tests inside the spec folder.
 
 ## Tools Used
 
-Ruby
-On Rails
-RSpec
-SQLite
-libs:
-  FactoryBot
-  Database Cleaner
-  Pry
-  Awesome Print
+- Ruby
+- On Rails
+- RSpec
+- SQLite
+- libs:
+  - FactoryBot
+  - Database Cleaner
+  - Pry
+  - Awesome Print
 
 ## Setup
 
