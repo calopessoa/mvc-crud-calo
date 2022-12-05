@@ -30,6 +30,7 @@ You may find unitary and integration tests inside the spec folder.
 - On Rails
 - RSpec
 - SQLite
+- CI/CD Github Actions / Jenkins
 - libs:
   - FactoryBot
   - Database Cleaner
