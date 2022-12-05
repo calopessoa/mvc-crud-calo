@@ -24,6 +24,18 @@ You may find unitary and integration tests inside the spec folder.
   </tr>
 </table>
 
+## Tools Used
+
+Ruby
+On Rails
+RSpec
+SQLite
+libs:
+  FactoryBot
+  Database Cleaner
+  Pry
+  Awesome Print
+
 ## Setup
 
 Clone this repository into your local machine, and move to the project's folder
