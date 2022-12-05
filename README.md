@@ -1,24 +1,70 @@
-# README
+# MVC-CRUD
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a project using the basics of scaffold CRUD building with Ruby on Rails. The goal here is to use the API REST to test them with RSpec.
+You may find unitary and integration tests inside the spec folder.
 
-Things you may want to cover:
+<table>
+  <tr>
+    <td>Ruby version</td>
+    <td>
+      3.0.3
+    </td>
+  </tr>
+  <tr>
+    <td>Rails version</td>
+    <td>
+      7.0.4
+    </td>
+  </tr>
+  <tr>
+    <td>Database</td>
+    <td>
+      SQLite
+    </td>
+  </tr>
+</table>
 
-* Ruby version
+## Tools Used
 
-* System dependencies
+- Ruby
+- On Rails
+- RSpec
+- SQLite
+- libs:
+  - FactoryBot
+  - Database Cleaner
+  - Pry
+  - Awesome Print
 
-* Configuration
+## Setup
 
-* Database creation
+Clone this repository into your local machine, and move to the project's folder
+```bash
+https://github.com/calopessoa/mvc-crud-calo.git
+```
 
-* Database initialization
+```bash
+cd mvc-crud-calo
+```
+Install dependencies
+```bash
+bundle install
+```
 
-* How to run the test suite
+## Usage
 
-* Services (job queues, cache servers, search engines, etc.)
+Load up the server
+```bash
+rails s
+```
+It'll be available at:
+http://localhost:3000/users
+or
+http://localhost:3000/usuarios
 
-* Deployment instructions
+## Tests
 
-* ...
+Run the following command:
+```bash
+rspec
+```
