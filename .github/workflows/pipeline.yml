@@ -1,0 +1,26 @@
+name: CI/CD with Github Actions
+
+on:
+    push:
+        branches: ["*"]
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout
+            uses: actions/checkout@v2
+
+          - name: Setup
+            uses: ruby/setup-ruby@v1
+              with:
+                  ruby-version: 3.0.3
+
+          - name: Install Dependencies
+            run: |
+              sudo apt-get update && bundle install --jobs 4 --retry 3
+
+          - name: Run Tests
+            run: |
+            bundle exec rails s
+            bundle exec rspec
