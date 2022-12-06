@@ -69,3 +69,7 @@ Run the following command:
 ```bash
 rspec
 ```
+
+## To Do:
+
+Documentation with Swagger
