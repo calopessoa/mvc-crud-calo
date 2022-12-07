@@ -1,151 +1,151 @@
----
-openapi: 3.0.1
-info:
-  title: API V1
-  version: v1
-paths:
-  "/users":
-    get:
-      summary: Retrieves all users
-      tags:
-      - Users
-      parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          type: string
-      responses:
-        '200':
-          description: all users
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  name:
-                    type: string
-                  email:
-                    type: string
-                required:
-                - name
-                - email
-        '404':
-          description: user not found
-    post:
-      summary: Creates a user
-      tags:
-      - Users
-      parameters: []
-      responses:
-        '201':
-          description: User was successfully created.
-        '422':
-          description: Invalid fields
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                email:
-                  type: string
-              required:
-              - name
-              - email
-  "/users/{id}":
-    get:
-      summary: Retrieves a user
-      tags:
-      - Users
-      parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          type: string
-      responses:
-        '200':
-          description: name found
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                  name:
-                    type: string
-                  email:
-                    type: string
-                  create_at:
-                    type: string
-                  update_at:
-                    type: string
-                  url:
-                    type: string
-                required:
-                - id
-                - name
-                - email
-        '404':
-          description: user not found
-    put:
-      summary: Updates a user matching the id
-      tags:
-      - Users
-      parameters: []
-      responses:
-        '201':
-          description: User was successfully updated.
-        '422':
-          description: Unprocessable entity
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                id:
-                  type: integer
-                name:
-                  type: string
-                email:
-                  type: string
-              required:
-              - id
-              - name
-              - email
-    delete:
-      summary: Deletes a user matching the id
-      tags:
-      - Users
-      parameters: []
-      responses:
-        '204':
-          description: User was deleted.
-        '422':
-          description: Unprocessable entity
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                id:
-                  type: integer
-                name:
-                  type: string
-                email:
-                  type: string
-              required:
-              - id
-              - name
-              - email
-servers:
-- url: https://{defaultHost}
-  variables:
-    defaultHost:
-      default: www.example.com
+# ---
+# openapi: 3.0.1
+# info:
+#   title: API V1
+#   version: v1
+# paths:
+#   "/users":
+#     get:
+#       summary: Retrieves all users
+#       tags:
+#       - Users
+#       parameters:
+#       - name: id
+#         in: path
+#         required: true
+#         schema:
+#           type: string
+#       responses:
+#         '200':
+#           description: all users
+#           content:
+#             application/json:
+#               schema:
+#                 type: object
+#                 properties:
+#                   name:
+#                     type: string
+#                   email:
+#                     type: string
+#                 required:
+#                 - name
+#                 - email
+#         '404':
+#           description: user not found
+#     post:
+#       summary: Creates a user
+#       tags:
+#       - Users
+#       parameters: []
+#       responses:
+#         '201':
+#           description: User was successfully created.
+#         '422':
+#           description: Invalid fields
+#       requestBody:
+#         content:
+#           application/json:
+#             schema:
+#               type: object
+#               properties:
+#                 name:
+#                   type: string
+#                 email:
+#                   type: string
+#               required:
+#               - name
+#               - email
+#   "/users/{id}":
+#     get:
+#       summary: Retrieves a user
+#       tags:
+#       - Users
+#       parameters:
+#       - name: id
+#         in: path
+#         required: true
+#         schema:
+#           type: string
+#       responses:
+#         '200':
+#           description: name found
+#           content:
+#             application/json:
+#               schema:
+#                 type: object
+#                 properties:
+#                   id:
+#                     type: integer
+#                   name:
+#                     type: string
+#                   email:
+#                     type: string
+#                   create_at:
+#                     type: string
+#                   update_at:
+#                     type: string
+#                   url:
+#                     type: string
+#                 required:
+#                 - id
+#                 - name
+#                 - email
+#         '404':
+#           description: user not found
+#     put:
+#       summary: Updates a user matching the id
+#       tags:
+#       - Users
+#       parameters: []
+#       responses:
+#         '201':
+#           description: User was successfully updated.
+#         '422':
+#           description: Unprocessable entity
+#       requestBody:
+#         content:
+#           application/json:
+#             schema:
+#               type: object
+#               properties:
+#                 id:
+#                   type: integer
+#                 name:
+#                   type: string
+#                 email:
+#                   type: string
+#               required:
+#               - id
+#               - name
+#               - email
+#     delete:
+#       summary: Deletes a user matching the id
+#       tags:
+#       - Users
+#       parameters: []
+#       responses:
+#         '204':
+#           description: User was deleted.
+#         '422':
+#           description: Unprocessable entity
+#       requestBody:
+#         content:
+#           application/json:
+#             schema:
+#               type: object
+#               properties:
+#                 id:
+#                   type: integer
+#                 name:
+#                   type: string
+#                 email:
+#                   type: string
+#               required:
+#               - id
+#               - name
+#               - email
+# servers:
+# - url: https://{defaultHost}
+#   variables:
+#     defaultHost:
+#       default: www.example.com
