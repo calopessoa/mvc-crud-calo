@@ -22,7 +22,7 @@ jobs:
 
           - name: Build
             run: |
-              rails s
+              bundle exec rails s
 
           - name: Run Tests
             run: |
