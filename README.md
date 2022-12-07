@@ -30,6 +30,7 @@ You may find unitary and integration tests inside the spec folder.
 - On Rails
 - RSpec
 - SQLite
+- CI/CD Github Actions / Jenkins
 - libs:
   - FactoryBot
   - Database Cleaner
@@ -68,3 +69,7 @@ Run the following command:
 ```bash
 rspec
 ```
+
+## To Do:
+
+Documentation with Swagger
