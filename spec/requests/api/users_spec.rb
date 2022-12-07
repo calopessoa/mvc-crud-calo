@@ -8,7 +8,7 @@ RSpec.describe 'api/users', type: :request do
       produces 'application/json'
       parameter name: :id, :in => :path, :type => :string
 
-      response '200' do
+      response '200', 'all users' do
         schema type: :object,
           properties: {
             name: { type: :string },
@@ -27,7 +27,7 @@ RSpec.describe 'api/users', type: :request do
     end
   end
 
-  path '/users/{id}.json' do
+  path '/users/{id}' do
 
     get 'Retrieves a user' do
       tags 'Users'
@@ -83,7 +83,7 @@ RSpec.describe 'api/users', type: :request do
     end
   end
 
-  path '/users/{id}.json' do
+  path '/users/{id}' do
 
     put 'Updates a user matching the id' do
       tags 'Users'
@@ -110,7 +110,7 @@ RSpec.describe 'api/users', type: :request do
     end
   end
 
-  path '/users/{id}.json' do
+  path '/users/{id}' do
 
     delete 'Deletes a user matching the id' do
       tags 'Users'
