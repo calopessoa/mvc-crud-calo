@@ -1,6 +1,6 @@
 require 'swagger_helper'
 
-RSpec.describe 'api/users', type: :request do
+RSpec.describe '/users', type: :request do
   path '/users' do
 
     get 'Retrieves all users' do
