@@ -31,6 +31,7 @@ You may find unitary and integration tests inside the spec folder.
 - RSpec
 - SQLite
 - CI/CD Github Actions / Jenkins
+- Swagger
 - libs:
   - FactoryBot
   - Database Cleaner
@@ -73,4 +74,4 @@ rspec
 ## Documentation:
 
 Available at:
-http://127.0.0.1:3000/api-docs/index.html
+http://localhost:3000/api-docs/index.html
