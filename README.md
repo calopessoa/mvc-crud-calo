@@ -70,6 +70,7 @@ Run the following command:
 rspec
 ```
 
-## To Do:
+## Documentation:
 
-Documentation with Swagger
+Available at:
+http://127.0.0.1:3000/api-docs/index.html
