@@ -1,4 +1,5 @@
 # MVC-CRUD
+[![CI/CD with Github Actions](https://github.com/calopessoa/mvc-crud-calo/actions/workflows/pipeline.yml/badge.svg)](https://github.com/calopessoa/mvc-crud-calo/actions/workflows/pipeline.yml)
 
 This is a project using the basics of scaffold CRUD building with Ruby on Rails. The goal here is to use the API REST to test them with RSpec.
 You may find unitary and integration tests inside the spec folder.
