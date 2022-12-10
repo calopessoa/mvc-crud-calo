@@ -70,3 +70,11 @@ Run the following command:
 ```bash
 rspec
 ```
+
+## Documentation
+
+Access the swagger path:
+```bash
+http://localhost:3000/api-docs/index.html
+```
+
