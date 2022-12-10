@@ -73,7 +73,7 @@ rspec
 
 ## Documentation
 
-Access the swagger path:
+Make sure the server is up(refer to Usage). Then, access the swagger path:
 ```bash
 http://localhost:3000/api-docs/index.html
 ```
