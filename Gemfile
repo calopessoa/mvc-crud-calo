@@ -60,6 +60,7 @@ group :development, :test do
   gem "pry"
   gem "pry-rails"
   gem "awesome_print"
+  gem 'rspec-openapi'
 end
 
 group :development do

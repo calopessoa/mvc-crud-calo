@@ -1,0 +1,10 @@
+Run the following command to create the spec for swagger:
+
+rails g rswag:install
+
+rails generate rspec:swagger users
+(it will create s spec based from your controller)
+
+Now, to generate a swagger file, run:
+
+rake rswag:specs:swaggerize
